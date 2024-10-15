@@ -1,0 +1,103 @@
+/* Table container */
+.mat-elevation-z8 {
+  margin: 20px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Table headers */
+mat-header-cell {
+  background-color: #004d99;
+  color: white;
+  font-weight: bold;
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+mat-header-cell:first-child {
+  border-top-left-radius: 8px;
+}
+
+mat-header-cell:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* Table rows and cells */
+mat-row {
+  background-color: #f7f9fc;
+  transition: background-color 0.3s;
+}
+
+mat-row:hover {
+  background-color: #e9f5ff;
+}
+
+mat-cell {
+  padding: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row colors */
+mat-row:nth-child(even) {
+  background-color: #f0f4f7;
+}
+
+/* Button styling for action */
+button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Hover effect for cells */
+mat-cell:hover {
+  background-color: #f1f4f9;
+}
+
+/* Custom styling for status column (delivered status) */
+mat-cell span {
+  display: inline-block;
+  padding: 5px 10px;
+  /* background-color: #28a745; */
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+mat-cell span:empty {
+  display: none;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 768px) {
+  .mat-elevation-z8 {
+    margin: 10px;
+    width: auto;
+  }
+
+  mat-header-cell, mat-cell {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

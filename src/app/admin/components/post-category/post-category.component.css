@@ -1,0 +1,49 @@
+/* Container styles */
+.container {
+  max-width: 600px;                /* Max width for the container */
+  margin: 40px auto;               /* Center the container with top and bottom margin */
+  padding: 20px;                   /* Padding inside the container */
+  border: 1px solid #ccc;          /* Light border around the container */
+  border-radius: 8px;              /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff;          /* Background color */
+}
+
+/* Title styles */
+h2 {
+  text-align: center;               /* Center align the heading */
+  color: #3f51b5;                  /* Color for the title */
+  margin-bottom: 20px;             /* Space below the title */
+}
+
+/* Form field styles */
+.form-field {
+  width: 100%;                     /* Make form fields take full width */
+  margin-bottom: 20px;             /* Space between form fields */
+}
+
+/* Button styles */
+button {
+  width: 100%;                     /* Full width button */
+  font-size: 16px;                /* Font size for button text */
+  padding: 12px;                  /* Padding for button */
+  border-radius: 4px;             /* Rounded corners for button */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Optional: Button color for different states */
+button.mat-raised-button {
+  background-color: #3f51b5;       /* Primary button color */
+  color: white;                    /* Text color for button */
+}
+
+/* Hover effect for button */
+button.mat-raised-button:hover {
+  background-color: #303f9f;       /* Darker shade on hover */
+}
+
+/* Error message styles */
+mat-error {
+  color: red;                      /* Error message color */
+  font-size: 12px;                /* Font size for error messages */
+}

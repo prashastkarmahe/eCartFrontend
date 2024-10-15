@@ -1,0 +1,49 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Place Order</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="orderForm">
+
+        <!-- Address Field -->
+        <mat-form-field appearance="outline">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address" placeholder="Address" required>
+          <mat-error *ngIf="orderForm.get('address').invalid && orderForm.get('address').touched">
+            This Input is Required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Order Description Field -->
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="orderDescriptioin" placeholder="Description">
+        </mat-form-field>
+
+        <!-- Payment Method Dropdown -->
+        <mat-form-field appearance="outline">
+          <mat-label>Payment Method</mat-label>
+          <mat-select formControlName="paymentMethod" required>
+            <mat-option value="credit-card">Credit Card</mat-option>
+            <mat-option value="debit-card">Debit Card</mat-option>
+            <mat-option value="net-banking">Net Banking</mat-option>
+            <mat-option value="upi">UPI</mat-option>
+            <mat-option value="cod">Cash on Delivery (COD)</mat-option>
+          </mat-select>
+          <mat-error *ngIf="orderForm.get('paymentMethod').invalid && orderForm.get('paymentMethod').touched">
+            Please select a payment method
+          </mat-error>
+        </mat-form-field>
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit"
+                [disabled]="orderForm.invalid" (click)= "placeOrder()" class="order-button">
+                Place Order
+              </button>
+              <button mat-stroked-button color="warn" (click)= "closeForm()" class="close-button">
+                Close
+              </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

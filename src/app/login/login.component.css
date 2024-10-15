@@ -1,0 +1,58 @@
+/* Container styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height of the viewport */
+  background-color: #f4f4f4; /* Light background for contrast */
+}
+
+/* Mat-card styling */
+mat-card {
+  width: 100%;
+  max-width: 400px; /* Max width of the card */
+  padding: 20px; /* Padding inside the card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+  background-color: white; /* White background for the card */
+}
+
+/* Mat-card title styling */
+mat-card-title {
+  font-size: 24px; /* Size of the title */
+  margin-bottom: 20px; /* Space below the title */
+  text-align: center; /* Centered title */
+  color: #3f51b5; /* Primary color */
+}
+
+/* Form field styling */
+mat-form-field {
+  width: 100%; /* Full width of form fields */
+  margin-bottom: 16px; /* Space below each field */
+}
+
+/* Button styling */
+button.mat-raised-button {
+  width: 100%; /* Full width button */
+  margin-top: 10px; /* Space above button */
+}
+
+/* Actions styling */
+mat-card-actions {
+  text-align: center; /* Center actions */
+  margin-top: 10px; /* Space above actions */
+}
+
+
+
+/* Error message styling */
+mat-error {
+  color: red; /* Error text color */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  mat-card {
+      width: 90%; /* Full width on smaller screens */
+  }
+}

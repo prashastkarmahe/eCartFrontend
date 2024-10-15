@@ -1,0 +1,113 @@
+/* Main container styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+/* Card styling */
+mat-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+mat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Card title styling */
+mat-card-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #3f51b5;
+}
+
+/* Form field styling */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-form-field.mat-focused .mat-form-field-label {
+  color: #3f51b5 !important;
+}
+
+mat-form-field.appearance-outline .mat-form-field-outline {
+  border-color: #3f51b5;
+}
+
+/* Input field styling */
+input[matInput] {
+  font-size: 16px;
+}
+
+mat-error {
+  font-size: 12px;
+  color: #f44336;
+}
+
+/* Button row styling */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.order-button {
+  width: 48%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #3f51b5 0%, #5c6bc0 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.order-button:hover {
+  background: linear-gradient(135deg, #5c6bc0 0%, #3f51b5 100%);
+  transform: translateY(-5px);
+}
+
+.close-button {
+  width: 48%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background: white;
+  color: #f44336;
+  border: 2px solid #f44336;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.close-button:hover {
+  background: #f44336;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .button-row {
+    flex-direction: column;
+  }
+
+  .order-button,
+  .close-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
