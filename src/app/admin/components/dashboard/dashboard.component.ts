@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { AdminService } from '../../service/admin.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { registerLocaleData } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-dashboard',

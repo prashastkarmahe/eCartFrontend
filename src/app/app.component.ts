@@ -12,7 +12,11 @@ export class AppComponent {
   isCustomerLoggedIn:boolean=UserStorageService.isCustomerLoggedIn();
   isAdminLoggedIn:boolean=UserStorageService.isAdminLoggedIn();
 
-  constructor(private router:Router){}
+  constructor(private router:Router){
+    if(!this.isAdminLoggedIn && !this.isCustomerLoggedIn){
+      this.router.navigateByUrl('login');
+    }
+  }
 
   ngOnInit():void{
     this.router.events.subscribe(event=>{

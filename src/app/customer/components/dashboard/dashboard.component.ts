@@ -54,8 +54,8 @@ export class DashboardComponent {
         this.snackBar.open("Product added to cart successfully","Close",{duration:5000});
       },
       err=>{
-        console.error("Error adding product to cart: ", err);
-        this.snackBar.open("Error adding product to cart", "Close", { duration: 5000 });
+        console.error("Product already in cart,quantity increased: ", err);
+        this.snackBar.open("Product already in cart,quantity increased", "OK", { duration: 5000 });
       }
     );
   }

@@ -16,7 +16,7 @@
 
         <ng-container matColumnDef="totalAmount">
           <th mat-header-cell *matHeaderCellDef>Amount</th>
-          <td mat-cell *matCellDef="let order">{{order.totalAmount}}</td>
+          <td mat-cell *matCellDef="let order">{{order.totalAmount| currency:'INR'}}</td>
         </ng-container>
 
         <ng-container matColumnDef="address">

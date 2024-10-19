@@ -10,7 +10,7 @@
     <!-- Amount Column -->
     <ng-container matColumnDef="totalAmount">
       <mat-header-cell *matHeaderCellDef style="font-weight: bolder;color: blue;">Amount</mat-header-cell>
-      <mat-cell *matCellDef="let myOrder">{{myOrder.totalAmount}}</mat-cell>
+      <mat-cell *matCellDef="let myOrder">{{myOrder.totalAmount|currency:'INR'}}</mat-cell>
     </ng-container>
 
     <!-- Address Column -->
@@ -25,6 +25,12 @@
       <mat-cell *matCellDef="let myOrder">{{myOrder.date | date:'dd/MM/yyyy'}}</mat-cell>
     </ng-container>
 
+    <!-- Payment Column -->
+    <ng-container matColumnDef="payment">
+      <mat-header-cell *matHeaderCellDef style="font-weight: bolder;color: blue;">Payment</mat-header-cell>
+      <mat-cell *matCellDef="let myOrder">{{myOrder.payment}}</mat-cell>
+    </ng-container>
+
     <!-- Status Column -->
     <ng-container matColumnDef="status">
       <mat-header-cell *matHeaderCellDef style="font-weight: bolder;color: blue;">Status</mat-header-cell>
@@ -35,14 +41,12 @@
     <ng-container matColumnDef="action">
       <mat-header-cell *matHeaderCellDef style="font-weight: bolder;color: blue;">Action</mat-header-cell>
       <mat-cell *matCellDef="let myOrder">
-        <span *ngIf="myOrder.orderStatus == 'Delivered'">
-          <button mat-raised-button color="primary" type="submit" routerLink="/customer/ordered_products/{{myOrder.id}}">Review</button>
-        </span>
+          <button mat-raised-button color="primary" (click)="getOrderDetails(myOrder.id)">Details</button>
       </mat-cell>
     </ng-container>
 
     <!-- Define the header and row templates -->
-    <mat-header-row *matHeaderRowDef="['trackingId','totalAmount','address','date','status','action']"></mat-header-row>
-    <mat-row *matRowDef="let myOrder; columns: ['trackingId','totalAmount','address','date','status','action']"></mat-row>
+    <mat-header-row *matHeaderRowDef="['trackingId','totalAmount','address','date','payment','status','action']"></mat-header-row>
+    <mat-row *matRowDef="let myOrder; columns: ['trackingId','totalAmount','address','date','payment','status','action']"></mat-row>
   </mat-table>
 </ng-container>

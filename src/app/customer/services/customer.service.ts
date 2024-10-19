@@ -63,6 +63,11 @@ export class CustomerService {
       headers:this.createAuthorizationHeader()
     });
   }
+  getCartByOrderId(orderId):Observable<any>{
+    return this.http.get(BASIC_URL+`api/customer/orders/orderDetails/${orderId}`,{
+      headers:this.createAuthorizationHeader()
+    });
+  }
 
   placeOrder(orderDto:any):Observable<any>{
     orderDto.userId=UserStorageService.getUserId();
