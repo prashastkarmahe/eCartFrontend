@@ -9,10 +9,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'eCartFrontend';
-  isCustomerLoggedIn:boolean=UserStorageService.isCustomerLoggedIn();
-  isAdminLoggedIn:boolean=UserStorageService.isAdminLoggedIn();
+  isCustomerLoggedIn:boolean = UserStorageService.isCustomerLoggedIn();
+  isAdminLoggedIn:boolean = UserStorageService.isAdminLoggedIn();
 
   constructor(private router:Router){
+    // No user is logged-in
     if(!this.isAdminLoggedIn && !this.isCustomerLoggedIn){
       this.router.navigateByUrl('login');
     }
@@ -27,6 +28,8 @@ export class AppComponent {
 
   logout(){
     UserStorageService.signOut();
+    this.isAdminLoggedIn=false;
+    this.isCustomerLoggedIn=false;
     this.router.navigateByUrl('login');
   }
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-
-const TOKEN='ecart-token';
-const USER='ecart-user';
+//Key for TOKEN & USER in localStorage of browser
+const TOKEN = 'ecart-token';
+const USER  = 'ecart-user';
 
 @Injectable({
   providedIn: 'root'

@@ -21,11 +21,11 @@ export class AuthService {
     const headers=new HttpHeaders().set('Content-type','application/json');
     const body={username,password};
 
-    console.log("AuthService : "+BASIC_URL+'authenticate'+body);
+    // console.log("AuthService : "+BASIC_URL+'authenticate'+body);
 
     return this.http.post(BASIC_URL+'authenticate',body,{headers,observe:'response'}).pipe(
       map((res)=>{
-        const token=res.headers.get('authorization').substring(7);//substring(7) removes "Bearer "
+        const token=res.headers.get('authorization').substring(7);
         const user=res.body;
         if(token && user){
           this.userStorageService.saveToken(token);
